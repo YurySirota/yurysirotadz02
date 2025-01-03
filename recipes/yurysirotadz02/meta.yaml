@@ -1,0 +1,43 @@
+{% set name = "yurysirotadz02" %}
+{% set version = "1.2.3" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 44a10c58e7d020d31b5572aaf6977c2a81a1f8776db9e897953b3b90d4a0c60d
+
+build:
+  number: 0
+  noarch: python 
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - pip
+    - python >= 3.6    
+  run:
+    - folium
+    - ipyleaflet
+    - pyshp
+    - python >= 3.6
+
+test:
+  imports:
+    - yurysirotadz02
+
+about:
+  home: "https://github.com/YurySirota/yurysirotadz02"
+  summary: 'My second dz'
+  license: YS
+  license_file: LICENSE.txt
+  summary: "A python package with 2nd DZ"
+  doc_url: "https://github.com/YurySirota/yurysirotadz02"
+  dev_url: "https://github.com/YurySirota/yurysirotadz02"  
+
+
+extra:
+  recipe-maintainers:
+    - yurysirota

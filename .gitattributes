@@ -1,2 +1,10 @@
-# Auto detect text files and perform LF normalization
 * text=auto
+
+*.patch binary
+*.diff binary
+
+*.yaml text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+# GitHub syntax highlighting
+pixi.lock linguist-language=YAML linguist-generated=true
